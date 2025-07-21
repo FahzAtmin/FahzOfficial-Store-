@@ -1,193 +1,65 @@
-/* Reset dasar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Background full photo */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('assets/bg.jpg'); /* Ganti nama gambar sesuai filemu */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
   color: #fff;
-  padding: 20px;
+  text-align: center;
+  padding: 2rem;
 }
 
-/* Overlay gelap agar tulisan lebih jelas */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6); /* atur transparansi background */
-  z-index: -1;
+h1 {
+  font-size: 2.5rem;
+  animation: glow 2s infinite alternate;
 }
 
-/* Header */
-.header {
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff0080; }
+  to { text-shadow: 0 0 20px #ff0080, 0 0 30px #ff8c00; }
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+#photo-gallery {
+  margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px 25px;
-  border-radius: 15px;
-  margin-bottom: 30px;
-  backdrop-filter: blur(8px);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
 }
 
-.logo img {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
+.love-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  clip-path: path("M 75 30 C 75 10, 40 0, 25 30 C 10 60, 75 110, 75 110 C 75 110, 140 60, 125 30 C 110 0, 75 10, 75 30 Z");
+  animation: pop 0.5s ease-in-out forwards;
+  opacity: 0;
 }
 
-.logo h1 {
-  font-size: 1.5rem;
-  color: #fff;
-}
-
-.kontak-header a {
-  color: #00f7ff;
-  text-decoration: none;
-}
-
-.kontak-header a:hover {
-  text-decoration: underline;
-}
-
-/* Bagian Section */
-section {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 25px;
-  margin-bottom: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-
-/* Judul section */
-section h2 {
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  border-left: 5px solid #00f7ff;
-  padding-left: 10px;
-  color: #00f7ff;
-}
-
-/* Form */
-.form-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #fff;
-}
-
-input[type="text"],
-select,
-input[type="file"] {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-  outline: none;
-}
-
-input::placeholder {
-  color: #ddd;
-}
-
-/* Tombol */
-.btn {
-  background-color: #00f7ff;
-  color: #000;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #00c0cc;
-  transform: scale(1.03);
-}
-
-.submit-btn {
-  width: 100%;
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
+@keyframes pop {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
   }
-
-  .logo h1 {
-    font-size: 1.2rem;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('assets/bg.jpg'); /* Ganti dengan path gambar kamu */
-  background-size: contain; /* Tampilkan seluruh gambar utuh */
-  background-repeat: no-repeat; /* Jangan diulang */
-  background-position: center top; /* Posisi tengah atas */
-  background-attachment: fixed;
-  color: #fff;
-  padding: 20px;
-  min-height: 100vh;
-  position: relative;
-}
-html, body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-image: url('assets/bg.jpg'); /* pastikan path-nya benar */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  position: relative;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
-}
 
-/* Tambahkan layer transparan gelap biar teks tetap kelihatan */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* bisa diubah jadi lebih terang atau gelap */
-  z-index: -1;
+.hidden {
+  display: none;
 }
-section, header, .form-group {
-  background-color: rgba(0, 0, 0, 0.6); /* latar belakang konten semi gelap */
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  }
