@@ -4,7 +4,7 @@ body {
   background-image: url("assets/bg.jpg");
   background-size: cover;
   background-position: center;
-  color: white;
+  color: #ffffff;
 }
 
 .container {
@@ -14,8 +14,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 .logo {
@@ -26,45 +27,53 @@ body {
   height: 80px;
 }
 .logo h1 {
-  font-size: 28px;
+  font-size: 32px;
   color: #00ffff;
   margin-top: 10px;
+  text-shadow: 2px 2px 4px black;
 }
 
 section {
   flex: 1 1 45%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   padding: 20px;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 15px;
   color: #00ffff;
+  text-shadow: 1px 1px 2px black;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px black;
 }
 
 input[type="text"],
 select,
 input[type="file"] {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: none;
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
 }
 
 input::file-selector-button {
@@ -74,18 +83,21 @@ input::file-selector-button {
   color: black;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button.submit-btn {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background: #00ffff;
   color: black;
   font-weight: bold;
+  font-size: 18px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 button.submit-btn:hover {
   background: #00dddd;
@@ -93,10 +105,13 @@ button.submit-btn:hover {
 
 img {
   max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 10px;
+  margin-top: 12px;
+  border: 2px solid #00ffff;
 }
 
 p {
-  margin: 8px 0;
+  margin: 10px 0;
+  font-size: 17px;
+  text-shadow: 1px 1px 2px black;
 }
