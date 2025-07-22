@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
@@ -12,71 +12,84 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  color: #fff;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.65);
   padding: 30px;
-  max-width: 400px;
-  width: 100%;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  border-radius: 20px;
+  border: 2px solid #fff;
+  max-width: 450px;
+  width: 90%;
+  box-shadow: 0 0 15px #00ffe0;
+  backdrop-filter: blur(8px);
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 10px;
+  width: 80px;
+  display: block;
+  margin: 0 auto 15px;
 }
 
-.desc {
-  font-size: 1.1rem;
+h1 {
+  text-align: center;
+  font-size: 22px;
   margin-bottom: 20px;
+  text-shadow: 0 0 10px #00ffe0;
+  color: #fff;
 }
 
-.buttons a {
+.product-list {
+  text-align: left;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.product-list label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid #00ffe0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 14px;
+}
+
+.product-list label:hover {
+  background-color: rgba(0, 255, 224, 0.15);
+}
+
+input[type="checkbox"] {
+  accent-color: #00ffe0;
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.button-area {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-area a {
   display: inline-block;
-  margin: 10px;
   padding: 10px 20px;
-  border-radius: 50px;
+  background: transparent;
+  border: 2px solid #00ffe0;
+  color: #00ffe0;
+  border-radius: 30px;
+  margin: 0 10px;
   text-decoration: none;
-  color: white;
   font-weight: bold;
-  transition: 0.3s;
-  border: 1px solid #fff;
-  backdrop-filter: blur(10px);
+  transition: all 0.3s;
 }
 
-.buttons a:hover {
-  background: white;
+.button-area a:hover {
+  background-color: #00ffe0;
   color: #000;
 }
-
-.card {
-  margin-top: 20px;
-  text-align: left;
-}
-
-.card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-select, input {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-select:focus, input:focus {
-  outline: none;
-  }
