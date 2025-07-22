@@ -1,97 +1,102 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-  background: url('assets/bg.jpg') no-repeat center center fixed;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("assets/bg.jpg");
   background-size: cover;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-position: center;
+  color: white;
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 25px 20px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
 }
 
-h1 {
+.logo {
   text-align: center;
-  font-size: 22px;
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 0 0 6px #00ffe0;
+}
+.logo img {
+  height: 80px;
+}
+.logo h1 {
+  font-size: 28px;
+  color: #00ffff;
+  margin-top: 10px;
 }
 
-form label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 10px;
+section {
+  flex: 1 1 45%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
   border-radius: 10px;
-  border: none;
+  backdrop-filter: blur(5px);
+}
+
+h2 {
+  font-size: 20px;
   margin-bottom: 15px;
-  outline: none;
-  background: #fff;
-  color: #000;
+  color: #00ffff;
 }
 
-form input[type="file"] {
-  background-color: #eee;
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+select,
+input[type="file"] {
+  width: 100%;
   padding: 8px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
 }
 
-.btn-kirim {
+input::file-selector-button {
+  background: #00ffff;
+  border: none;
+  padding: 6px 12px;
+  color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.submit-btn {
   width: 100%;
   padding: 12px;
-  background-color: #00c853;
-  color: #fff;
+  background: #00ffff;
+  color: black;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
 }
-
-.btn-kirim:hover {
-  background-color: #00e676;
+button.submit-btn:hover {
+  background: #00dddd;
 }
 
-/* Logo & Header kecil di atas */
-.logo-area {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-.logo-area img {
-  height: 50px;
-}
-
-.logo-area .sosmed {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.logo-area .sosmed a {
-  color: #00ffe0;
-  text-decoration: none;
-  margin: 2px 0;
-  font-size: 14px;
+p {
+  margin: 8px 0;
 }
