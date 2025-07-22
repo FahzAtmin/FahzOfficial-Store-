@@ -8,88 +8,90 @@
 body {
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: #fff;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
 }
 
 .container {
-  background: rgba(0, 0, 0, 0.65);
-  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 25px 20px;
   border-radius: 20px;
-  border: 2px solid #fff;
-  max-width: 450px;
-  width: 90%;
-  box-shadow: 0 0 15px #00ffe0;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
-}
-
-.logo {
-  width: 80px;
-  display: block;
-  margin: 0 auto 15px;
 }
 
 h1 {
   text-align: center;
   font-size: 22px;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px #00ffe0;
   color: #fff;
+  text-shadow: 0 0 6px #00ffe0;
 }
 
-.product-list {
-  text-align: left;
-  max-height: 300px;
-  overflow-y: auto;
-  padding-right: 8px;
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
-.product-list label {
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  outline: none;
+  background: #fff;
+  color: #000;
+}
+
+form input[type="file"] {
+  background-color: #eee;
+  padding: 8px;
+}
+
+.btn-kirim {
+  width: 100%;
+  padding: 12px;
+  background-color: #00c853;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-kirim:hover {
+  background-color: #00e676;
+}
+
+/* Logo & Header kecil di atas */
+.logo-area {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  border: 1px solid #00ffe0;
-  cursor: pointer;
-  transition: 0.2s ease;
-  font-size: 14px;
+  margin-bottom: 15px;
 }
 
-.product-list label:hover {
-  background-color: rgba(0, 255, 224, 0.15);
+.logo-area img {
+  height: 50px;
 }
 
-input[type="checkbox"] {
-  accent-color: #00ffe0;
-  margin-right: 10px;
-  transform: scale(1.2);
+.logo-area .sosmed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.button-area {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.button-area a {
-  display: inline-block;
-  padding: 10px 20px;
-  background: transparent;
-  border: 2px solid #00ffe0;
+.logo-area .sosmed a {
   color: #00ffe0;
-  border-radius: 30px;
-  margin: 0 10px;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
-.button-area a:hover {
-  background-color: #00ffe0;
-  color: #000;
+  margin: 2px 0;
+  font-size: 14px;
 }
