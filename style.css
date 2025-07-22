@@ -1,65 +1,82 @@
-body {
+* {
   margin: 0;
-  font-family: 'Comic Sans MS', cursive;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
   color: #fff;
   text-align: center;
-  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-h1 {
-  font-size: 2.5rem;
-  animation: glow 2s infinite alternate;
+.logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff0080; }
-  to { text-shadow: 0 0 20px #ff0080, 0 0 30px #ff8c00; }
+.desc {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-button {
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  border: none;
-  background-color: #ff69b4;
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  text-decoration: none;
   color: white;
-  border-radius: 30px;
-  cursor: pointer;
+  font-weight: bold;
   transition: 0.3s;
-}
-button:hover {
-  background-color: #ff1493;
-  transform: scale(1.05);
+  border: 1px solid #fff;
+  backdrop-filter: blur(10px);
 }
 
-#photo-gallery {
-  margin-top: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+.buttons a:hover {
+  background: white;
+  color: #000;
 }
 
-.love-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  clip-path: path("M 75 30 C 75 10, 40 0, 25 30 C 10 60, 75 110, 75 110 C 75 110, 140 60, 125 30 C 110 0, 75 10, 75 30 Z");
-  animation: pop 0.5s ease-in-out forwards;
-  opacity: 0;
+.card {
+  margin-top: 20px;
+  text-align: left;
 }
 
-@keyframes pop {
-  from {
-    transform: scale(0.3);
-    opacity: 0;
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+select, input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+select:focus, input:focus {
+  outline: none;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.hidden {
-  display: none;
-}
