@@ -3,220 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FahzOfficial Store</title>
+  <title>Formulir Pembayaran | FahzOfficial</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-image: url("assets/bg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      min-height: 100vh;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    .logo img {
-      height: 60px;
-      margin-right: 10px;
-    }
-    .logo h1 {
-      font-size: 24px;
-      margin: 0;
-    }
-    .kontak-header p {
-      margin: 0;
-    }
-    section {
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      border-radius: 10px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-    input[type="file"] {
-      background: white;
-      color: black;
-    }
-    .btn {
-      padding: 10px 20px;
-      background-color: #00aaff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .btn:hover {
-      background-color: #0088cc;
-    }
-    .submit-btn {
-      background-color: #4CAF50;
-    }
-    .submit-btn:hover {
-      background-color: #45a049;
-    }
-  </style>
 </head>
 <body>
+  <div class="container">
+    <img src="https://i.ibb.co/yYSJLCR/fantasome-icon.jpg" alt="Fantasome Icon" class="icon-fantasome" />
 
-<header class="header">
-  <div class="logo">
-    <img src="assets/logo.png" alt="Logo FahzOfficial" />
-    <h1>FahzOfficial Store</h1>
+    <h1>Pembayaran Otomatis</h1>
+    <p class="subtitle">Silakan isi formulir lalu unggah bukti pembayaran.</p>
+
+    <input type="text" id="nama" placeholder="Nama Pengirim" required />
+    <input type="text" id="nominal" placeholder="Nominal Pembayaran (Contoh: 25.000)" required />
+    <input type="file" id="bukti" accept="image/*" required />
+
+    <div class="payment-methods">
+      <button type="button" id="btnDana" class="active">Dana</button>
+      <button type="button" id="btnQris">QRIS</button>
+    </div>
+
+    <div id="danaBox" class="dana-box">
+      <p>No Dana: <strong>089610921722</strong></p>
+    </div>
+
+    <div id="qrisBox" class="qris-box" style="display: none;">
+      <img src="qris.jpg" alt="QRIS Code">
+      <p>Scan untuk bayar via QRIS</p>
+    </div>
+
+    <button onclick="kirim()">Kirim ke WhatsApp Admin</button>
   </div>
-  <div class="kontak-header">
-    <p><i class="fas fa-phone-alt"></i> <a href="https://wa.me/628998967277" target="_blank" style="color: #00ffea;">WhatsApp</a></p>
-    <p><i class="fab fa-telegram-plane"></i> <a href="https://t.me/fahzstore" target="_blank" style="color: #00ffea;">Telegram</a></p>
-  </div>
-</header>
 
-<section class="produk">
-  <h2><i class="fas fa-shopping-cart"></i> Produk FahzOfficial</h2>
-  <div class="form-group">
-    <label for="produk"><i class="fas fa-box-open"></i> Pilih Produk</label>
-    <select id="produk" name="produk" onchange="updateHarga()" required>
-      <option value="">-- Pilih Produk --</option>
-      <option value="PANEL 1GB" data-harga="1000">▢ PANEL 1GB : 1K</option>
-      <option value="PANEL 2GB" data-harga="2000">▢ PANEL 2GB : 2K</option>
-      <option value="PANEL 3GB" data-harga="3000">▢ PANEL 3GB : 3K</option>
-      <option value="PANEL 4GB" data-harga="4000">▢ PANEL 4GB : 4K</option>
-      <option value="PANEL 5GB" data-harga="5000">▢ PANEL 5GB : 5K</option>
-      <option value="PANEL 6GB" data-harga="6000">▢ PANEL 6GB : 6K</option>
-      <option value="PANEL 7GB" data-harga="7000">▢ PANEL 7GB : 7K</option>
-      <option value="PANEL 8GB" data-harga="8000">▢ PANEL 8GB : 8K</option>
-      <option value="PANEL 9GB" data-harga="9000">▢ PANEL 9GB : 9K</option>
-      <option value="PANEL 10GB" data-harga="10000">▢ PANEL 10GB : 10K</option>
-      <option value="PANEL UNLI" data-harga="13000">▢ PANEL UNLI : 13K</option>
-      <option value="reseller" data-harga="15000">▢ RESELLER PANEL : 15K</option>
-      <option value="nokos" data-harga="7000">▢ NOKOS INDO/LUAR : 7K - 60K</option>
-      <option value="adminpanel" data-harga="20000">▢ ADMIN PANEL : 20K</option>
-      <option value="ownerpanel" data-harga="25000">▢ OWNER PANEL : 25K</option>
-      <option value="renamesc" data-harga="15000">▢ JASA RENAME SC : 15K</option>
-      <option value="ptfahz" data-harga="30000">▢ PT FAHZ OFFICIAL : 30K</option>
-      <option value="pushch" data-harga="25000">▢ JASA PUSH CH: 1K PENGIKUT 25K</option>
-      <option value="muridch" data-harga="20000">▢ MURID PUSH CH: 20K</option>
-      <option value="ownerch" data-harga="30000">▢ OWNER PUSH CH: 30K</option>
-      <option value="ptch" data-harga="50000">▢ PT PUSH CH: 50K</option>
-      <option value="web20k" data-harga="20000">▢ JASA BUAT WEB STORE 20K NO GARANSI</option>
-      <option value="web40k" data-harga="40000">▢ JASA BUAT WEB STORE 40K GARANSI 30H</option>
-      <option value="jweb60k" data-harga="60000">▢ JASA BUAT WEB STORE 60K GARANSI PERMANEN</option>
-    </select>
-  </div>
-</section>
+  <script>
+    const btnDana = document.getElementById('btnDana');
+    const btnQris = document.getElementById('btnQris');
+    const danaBox = document.getElementById('danaBox');
+    const qrisBox = document.getElementById('qrisBox');
 
-<section class="payment-form">
-  <h2><i class="fas fa-credit-card"></i> Formulir Pembayaran</h2>
-  <form id="paymentForm" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
-      <input type="text" id="nama" name="nama" placeholder="Contoh: Fahri Alan" required />
-    </div>
-    <div class="form-group">
-      <label for="harga"><i class="fas fa-money-bill-wave"></i> Harga</label>
-      <input type="text" id="harga" name="harga" readonly />
-    </div>
-    <div class="form-group">
-      <label for="metode"><i class="fas fa-university"></i> Metode Pembayaran</label>
-      <select id="metode" name="metode" required>
-        <option value="">-- Pilih Metode --</option>
-        <option value="DANA">DANA (089610921722)</option>
-        <option value="QRIS">QRIS</option>
-      </select>
-    </div>
-    <div id="infoPembayaran" class="form-group" style="display: none;"></div>
-    <div class="form-group">
-      <label for="bukti"><i class="fas fa-image"></i> Upload Bukti Transfer</label>
-      <input type="file" id="bukti" name="bukti" accept="image/*" required />
-    </div>
-    <button type="submit" class="btn submit-btn"><i class="fas fa-paper-plane"></i> Kirim Pembayaran</button>
-  </form>
-</section>
-
-<script>
-  function updateHarga() {
-    const select = document.getElementById("produk");
-    const selected = select.options[select.selectedIndex];
-    const harga = selected.getAttribute("data-harga") || "";
-    document.getElementById("harga").value = harga ? `Rp ${harga}` : "";
-  }
-
-  document.getElementById("metode").addEventListener("change", function () {
-    const metode = this.value;
-    const infoDiv = document.getElementById("infoPembayaran");
-
-    if (metode === "DANA") {
-      infoDiv.style.display = "block";
-      infoDiv.innerHTML = `
-        <p><strong>Nomor DANA:</strong> <span id="danaNumber">089610921722</span></p>
-        <button onclick="copyDana()" class="btn"><i class="fas fa-copy"></i> Salin Nomor</button>
-      `;
-    } else if (metode === "QRIS") {
-      infoDiv.style.display = "block";
-      infoDiv.innerHTML = `
-        <p><strong>Silakan scan QRIS berikut:</strong></p>
-        <img src="assets/qris.jpg" alt="QRIS Code" style="width: 200px; border-radius: 10px;" />
-      `;
-    } else {
-      infoDiv.style.display = "none";
-      infoDiv.innerHTML = "";
-    }
-  });
-
-  function copyDana() {
-    const nomor = "089610921722";
-    navigator.clipboard.writeText(nomor).then(() => {
-      alert("Nomor DANA disalin: " + nomor);
+    btnDana.addEventListener('click', () => {
+      danaBox.style.display = 'block';
+      qrisBox.style.display = 'none';
+      btnDana.classList.add('active');
+      btnQris.classList.remove('active');
     });
-  }
 
-  document.getElementById("paymentForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+    btnQris.addEventListener('click', () => {
+      danaBox.style.display = 'none';
+      qrisBox.style.display = 'block';
+      btnQris.classList.add('active');
+      btnDana.classList.remove('active');
+    });
 
-    const nama = document.getElementById("nama").value.trim();
-    const produkSelect = document.getElementById("produk");
-    const produk = produkSelect.value;
-    const produkNama = produkSelect.options[produkSelect.selectedIndex].text;
-    const harga = document.getElementById("harga").value;
-    const metode = document.getElementById("metode").value;
-    const bukti = document.getElementById("bukti").files[0];
+    async function kirim() {
+      const nama = document.getElementById("nama").value;
+      const nominal = document.getElementById("nominal").value;
+      const bukti = document.getElementById("bukti").files[0];
+      if (!nama || !nominal || !bukti) return alert("Lengkapi semua data!");
 
-    if (!nama || !produk || !metode || !bukti) {
-      alert("Semua field harus diisi.");
-      return;
+      // Upload ke imgbb
+      const formData = new FormData();
+      formData.append("image", bukti);
+      const imgbbKey = "cef18c0096a9388f2a22eb1f603542c0";
+      const upload = await fetch(`https://api.imgbb.com/1/upload?key=${imgbbKey}`, {
+        method: "POST",
+        body: formData
+      });
+      const result = await upload.json();
+      const imageUrl = result.data.url;
+
+      const pesan = `🧾 *HALLO ADMIN INI BUKTI PEMBAYARAN SAYA MOHON SEGERA KONFIRMASI*
+      
+👤 Nama: ${nama}
+💰 Nominal: ${nominal}
+📸 Bukti: ${imageUrl}`;
+      [ *`TERIMA KASIH SUDAH ORDER DI FahzOfficial LANGGANAN TERUS YA JANGAN LUPA PROMOSII`*
+🌟 SALURAN ADMIN : 'https://whatsapp.com/channel/0029VbAecsYCnA7rMUiBMe3X'
+      const waTujuan = "628998967277"; // Ganti dengan nomor admin
+      const linkWA = `https://wa.me/${waTujuan}?text=${encodeURIComponent(pesan)}`;
+      window.open(linkWA, "_blank");
     }
-
-    if (!bukti.type.startsWith("image/")) {
-      alert("File bukti transfer harus berupa gambar.");
-      return;
-    }
-
-    const pesan = `Halo Admin, saya ingin mengkonfirmasi pembayaran:\n\n👤 Nama: ${nama}\n📦 Produk: ${produkNama}\n💰 Harga: ${harga}\n💳 Metode: ${metode}\n\n📎 Bukti transfer akan saya kirim di chat ini.`;
-    const url = `https://wa.me/628998967277?text=${encodeURIComponent(pesan)}`;
-    window.open(url, "_blank");
-  });
-</script>
-
+  </script>
 </body>
-        </html>
+</html>
